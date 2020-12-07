@@ -47,4 +47,14 @@ rules:
   - delete
   - patch
   - update
+{{- if .Values.podSecurityPolicies -}}
+- apiGroups: ["policy"]
+  resources: ["podsecuritypolicies"]
+  verbs: ["use"]
+  resourceNames:
+{{- range $policy:= .Values.podSecurityPolicies }}
+  - {{ $policy }}
+{{- end }}
+{{- end -}}
+
 {{- end -}}

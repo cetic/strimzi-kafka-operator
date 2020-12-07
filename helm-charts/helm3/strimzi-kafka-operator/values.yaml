@@ -4,6 +4,7 @@
 # the chart will fail because duplicate RoleBindings will be attempted to be created in the same namespace
 watchNamespaces: []
 watchAnyNamespace: false
+podSecurityPolicies: []
 
 image:
   registry: quay.io
